@@ -26,76 +26,76 @@ int main(void)
 	//Set up GPIO for LED
 	gpioSetMode(LED, PI_OUTPUT);
 
-	//Set up GPIO pins for stepper motor
-	gpioSetMode(IN1, PI_OUTPUT);
-	gpioSetMode(IN2, PI_OUTPUT);
-	gpioSetMode(IN3, PI_OUTPUT);
-	gpioSetMode(IN4, PI_OUTPUT);
+	////Set up GPIO pins for stepper motor
+	//gpioSetMode(IN1, PI_OUTPUT);
+	//gpioSetMode(IN2, PI_OUTPUT);
+	//gpioSetMode(IN3, PI_OUTPUT);
+	//gpioSetMode(IN4, PI_OUTPUT);
 
-	//Start at 0
-	gpioWrite(IN1, PI_LOW);
-	gpioWrite(IN2, PI_LOW);
-	gpioWrite(IN3, PI_LOW);
-	gpioWrite(IN4, PI_LOW);
+	////Start at 0
+	//gpioWrite(IN1, PI_LOW);
+	//gpioWrite(IN2, PI_LOW);
+	//gpioWrite(IN3, PI_LOW);
+	//gpioWrite(IN4, PI_LOW);
 
-	for (int i = 0; i < stepsPerRev/4; ++i)
-	{
-		//1
-		gpioWrite(IN1, PI_HIGH);
-		gpioWrite(IN2, PI_LOW);
-		gpioWrite(IN3, PI_LOW);
-		gpioWrite(IN4, PI_HIGH);
-		std::this_thread::sleep_for(std::chrono::microseconds(_DELAY));
+	//for (int i = 0; i < stepsPerRev/4; ++i)
+	//{
+	//	//1
+	//	gpioWrite(IN1, PI_HIGH);
+	//	gpioWrite(IN2, PI_LOW);
+	//	gpioWrite(IN3, PI_LOW);
+	//	gpioWrite(IN4, PI_HIGH);
+	//	std::this_thread::sleep_for(std::chrono::microseconds(_DELAY));
 
-		//2
-		gpioWrite(IN1, PI_HIGH);
-		gpioWrite(IN2, PI_LOW);
-		gpioWrite(IN3, PI_LOW);
-		gpioWrite(IN4, PI_LOW);
-		std::this_thread::sleep_for(std::chrono::microseconds(_DELAY));
+	//	//2
+	//	gpioWrite(IN1, PI_HIGH);
+	//	gpioWrite(IN2, PI_LOW);
+	//	gpioWrite(IN3, PI_LOW);
+	//	gpioWrite(IN4, PI_LOW);
+	//	std::this_thread::sleep_for(std::chrono::microseconds(_DELAY));
 
-		//3
-		gpioWrite(IN1, PI_HIGH);
-		gpioWrite(IN2, PI_HIGH);
-		gpioWrite(IN3, PI_LOW);
-		gpioWrite(IN4, PI_LOW);
-		std::this_thread::sleep_for(std::chrono::microseconds(_DELAY));
+	//	//3
+	//	gpioWrite(IN1, PI_HIGH);
+	//	gpioWrite(IN2, PI_HIGH);
+	//	gpioWrite(IN3, PI_LOW);
+	//	gpioWrite(IN4, PI_LOW);
+	//	std::this_thread::sleep_for(std::chrono::microseconds(_DELAY));
 
-		//4
-		gpioWrite(IN1, PI_LOW);
-		gpioWrite(IN2, PI_HIGH);
-		gpioWrite(IN3, PI_LOW);
-		gpioWrite(IN4, PI_LOW);
-		std::this_thread::sleep_for(std::chrono::microseconds(_DELAY));
+	//	//4
+	//	gpioWrite(IN1, PI_LOW);
+	//	gpioWrite(IN2, PI_HIGH);
+	//	gpioWrite(IN3, PI_LOW);
+	//	gpioWrite(IN4, PI_LOW);
+	//	std::this_thread::sleep_for(std::chrono::microseconds(_DELAY));
 
-		//5
-		gpioWrite(IN1, PI_LOW);
-		gpioWrite(IN2, PI_HIGH);
-		gpioWrite(IN3, PI_HIGH);
-		gpioWrite(IN4, PI_LOW);
-		std::this_thread::sleep_for(std::chrono::microseconds(_DELAY));
+	//	//5
+	//	gpioWrite(IN1, PI_LOW);
+	//	gpioWrite(IN2, PI_HIGH);
+	//	gpioWrite(IN3, PI_HIGH);
+	//	gpioWrite(IN4, PI_LOW);
+	//	std::this_thread::sleep_for(std::chrono::microseconds(_DELAY));
 
-		//6
-		gpioWrite(IN1, PI_LOW);
-		gpioWrite(IN2, PI_LOW);
-		gpioWrite(IN3, PI_HIGH);
-		gpioWrite(IN4, PI_LOW);
-		std::this_thread::sleep_for(std::chrono::microseconds(_DELAY));
-		
-		//7
-		gpioWrite(IN1, PI_LOW);
-		gpioWrite(IN2, PI_LOW);
-		gpioWrite(IN3, PI_HIGH);
-		gpioWrite(IN4, PI_HIGH);
-		std::this_thread::sleep_for(std::chrono::microseconds(_DELAY));
+	//	//6
+	//	gpioWrite(IN1, PI_LOW);
+	//	gpioWrite(IN2, PI_LOW);
+	//	gpioWrite(IN3, PI_HIGH);
+	//	gpioWrite(IN4, PI_LOW);
+	//	std::this_thread::sleep_for(std::chrono::microseconds(_DELAY));
+	//	
+	//	//7
+	//	gpioWrite(IN1, PI_LOW);
+	//	gpioWrite(IN2, PI_LOW);
+	//	gpioWrite(IN3, PI_HIGH);
+	//	gpioWrite(IN4, PI_HIGH);
+	//	std::this_thread::sleep_for(std::chrono::microseconds(_DELAY));
 
-		//8
-		gpioWrite(IN1, PI_LOW);
-		gpioWrite(IN2, PI_LOW);
-		gpioWrite(IN3, PI_LOW);
-		gpioWrite(IN4, PI_HIGH);
-		std::this_thread::sleep_for(std::chrono::microseconds(_DELAY));
-	}
+	//	//8
+	//	gpioWrite(IN1, PI_LOW);
+	//	gpioWrite(IN2, PI_LOW);
+	//	gpioWrite(IN3, PI_LOW);
+	//	gpioWrite(IN4, PI_HIGH);
+	//	std::this_thread::sleep_for(std::chrono::microseconds(_DELAY));
+	//}
 
 	//Blink loop
 	while (true)
